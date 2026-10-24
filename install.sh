@@ -14,7 +14,7 @@ CLAUDE_DIR="$HOME/.claude"
 SETTINGS="$CLAUDE_DIR/settings.json"
 SKILL_LINK="$CLAUDE_DIR/skills/conventions-audit"
 POINTER="$CLAUDE_DIR/CLAUDE.md"
-BEGIN='<!-- conventions:begin (managed by ~/conventions/install.sh) -->'
+BEGIN='<!-- conventions:begin (managed by ~/Conventions/install.sh) -->'
 END='<!-- conventions:end -->'
 
 MODE=install; COPY=0
@@ -45,7 +45,7 @@ strip_hooks() {
   jq '
     if .hooks then
       .hooks |= with_entries(
-        .value |= map(select(all(.hooks[]?; (.command // "") | contains("/conventions/hooks/") | not)))
+        .value |= map(select(all(.hooks[]?; (.command // "") | ascii_downcase | contains("/conventions/hooks/") | not)))
       )
       | .hooks |= with_entries(select(.value | length > 0))
       | if (.hooks | length) == 0 then del(.hooks) else . end
@@ -90,7 +90,7 @@ remove_pointer() {
 import re, sys
 path, begin, end = sys.argv[1:4]
 text = open(path).read()
-text = re.sub(re.escape(begin) + r".*?" + re.escape(end) + r"\n?", "", text, flags=re.S)
+text = re.sub(r"<!-- conventions:begin[^>]*-->.*?" + re.escape(end) + r"\n?", "", text, flags=re.S)
 text = text.rstrip("\n")
 if text.strip():
     open(path, "w").write(text + "\n")
@@ -105,9 +105,9 @@ write_pointer() {
 $BEGIN
 # Workspace conventions
 
-- Workspaces whose root \`CLAUDE.md\` has a \`# Project Map\` follow \`~/conventions/GUIDE.md\`. Read it before creating or restructuring any \`CLAUDE.md\` or \`CONTEXT.md\`; skeletons are in \`~/conventions/templates/\`.
+- Workspaces whose root \`CLAUDE.md\` has a \`# Project Map\` follow \`~/Conventions/GUIDE.md\`. Read it before creating or restructuring any \`CLAUDE.md\` or \`CONTEXT.md\`; skeletons are in \`~/Conventions/templates/\`.
 - Run \`/conventions-audit\` to check a workspace against it. The new-file, move-tracking and \`# Last Updated\` hooks are already registered user-level — don't copy them into a project.
-- Edit conventions only in \`~/conventions\`, a clone of https://github.com/hquinde/conventions (log the change in its \`CHANGELOG.md\`, then commit and push); never keep a copy inside a workspace.
+- Edit conventions only in \`~/Conventions\`, a clone of https://github.com/hquinde/Conventions (log the change in its \`CHANGELOG.md\`, then commit and push); never keep a copy inside a workspace.
 $END
 EOF
   } > "$POINTER.new"
@@ -134,7 +134,7 @@ if [ "$MODE" = install ]; then
   link_skill
   write_pointer
   echo "installed from $REPO"
-  echo "  hooks  : $(jq '[.hooks[][] | .hooks[]?.command | select(contains("/conventions/hooks/"))] | length' "$SETTINGS") registered in $SETTINGS"
+  echo "  hooks  : $(jq '[.hooks[][] | .hooks[]?.command | select(ascii_downcase | contains("/conventions/hooks/"))] | length' "$SETTINGS") registered in $SETTINGS"
   echo "  skill  : $SKILL_LINK$([ -L "$SKILL_LINK" ] && echo " -> $(readlink "$SKILL_LINK")" || echo " (copy)")"
   echo "  pointer: $POINTER"
   echo "Start a new Claude Code session (or open /hooks) for hook changes to take effect."

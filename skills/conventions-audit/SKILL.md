@@ -1,11 +1,11 @@
 ---
 name: conventions-audit
-description: Audit a workspace's CLAUDE.md tree against the conventions defined in ~/conventions/GUIDE.md. Use whenever asked to "check conventions", "verify CLAUDE.md consistency", "audit the docs", or after creating a new workspace's CLAUDE.md tree to confirm it follows the conventions.
+description: Audit a workspace's CLAUDE.md tree against the conventions defined in ~/Conventions/GUIDE.md. Use whenever asked to "check conventions", "verify CLAUDE.md consistency", "audit the docs", or after creating a new workspace's CLAUDE.md tree to confirm it follows the conventions.
 ---
 
 # Conventions Audit
 
-Checks a workspace's `CLAUDE.md` tree against the conventions documented in `~/conventions/GUIDE.md` (templates are in `~/conventions/templates/`). Read the guide first if this is the first time auditing a given workspace — it explains the *why* behind each check below.
+Checks a workspace's `CLAUDE.md` tree against the conventions documented in `~/Conventions/GUIDE.md` (templates are in `~/Conventions/templates/`). Read the guide first if this is the first time auditing a given workspace — it explains the *why* behind each check below.
 
 ## 1. Discover the tree
 
@@ -33,7 +33,7 @@ Grep the whole tree for filenames that no longer exist at the path implied by th
 
 ## 7. Hooks and skill wired once, user-level
 
-Confirm `~/.claude/settings.json` registers the four scripts from `~/conventions/hooks/` — `claude-md-reminder.sh` on `PostToolUse`/`Write`, `mv-reminder.sh` on `PostToolUse`/`Bash`, `stamp-claude-md-date.sh` on `PostToolUse`/`Edit|Write`, `check-pending-moves.py` on `Stop` — and that `~/.claude/skills/conventions-audit` resolves. In the workspace being audited, flag (rule 16): a `conventions/` folder, copies of those four scripts under `.claude/hooks/`, a `.claude/skills/conventions-audit/` copy, or project `settings.json` entries that register them (they would fire twice). A project's own hooks are fine, but each must be documented with a working link in `.claude/CLAUDE.md`. Flag a root `CLAUDE.md` with no `# Conventions` section, or one that lacks the `@~/conventions/GUIDE.md` import line. If the root `CLAUDE.md` has neither `# Project Map` nor `# Last Updated`, note that the hooks skip this workspace.
+Confirm `~/.claude/settings.json` registers the four scripts from `~/Conventions/hooks/` — `claude-md-reminder.sh` on `PostToolUse`/`Write`, `mv-reminder.sh` on `PostToolUse`/`Bash`, `stamp-claude-md-date.sh` on `PostToolUse`/`Edit|Write`, `check-pending-moves.py` on `Stop` — and that `~/.claude/skills/conventions-audit` resolves. In the workspace being audited, flag (rule 16): a `conventions/` folder, copies of those four scripts under `.claude/hooks/`, a `.claude/skills/conventions-audit/` copy, or project `settings.json` entries that register them (they would fire twice). A project's own hooks are fine, but each must be documented with a working link in `.claude/CLAUDE.md`. Flag a root `CLAUDE.md` with no `# Conventions` section, or one that lacks the `@~/Conventions/GUIDE.md` import line. If the root `CLAUDE.md` has neither `# Project Map` nor `# Last Updated`, note that the hooks skip this workspace.
 
 ## 8. Descriptions are snapshot-free and accurate
 
@@ -41,7 +41,7 @@ For each bullet, flag descriptions that carry due dates, problem/file counts, "i
 
 ## 9. Index / process split
 
-For every `CLAUDE.md` that carries a `# Context` section, confirm the linked `CONTEXT.md` exists and has the stages from `~/conventions/templates/CONTEXT.md.template` (Inputs, Process, Checkpoints, Audit, Outputs), and that every file it links resolves. Flag a `CLAUDE.md` that holds standing process rules inline and has no `CONTEXT.md` (rule 11).
+For every `CLAUDE.md` that carries a `# Context` section, confirm the linked `CONTEXT.md` exists and has the stages from `~/Conventions/templates/CONTEXT.md.template` (Inputs, Process, Checkpoints, Audit, Outputs), and that every file it links resolves. Flag a `CLAUDE.md` that holds standing process rules inline and has no `CONTEXT.md` (rule 11).
 
 ## 10. Folder Map agrees with Project Map
 

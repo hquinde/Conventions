@@ -2,7 +2,7 @@
 
 # Purpose
 
-- Claude Code configuration for this workspace: its own skills, hooks, and settings. The convention hooks and `conventions-audit` are user-level (`~/conventions`) and are not listed here.
+- Claude Code configuration for this workspace: its own skills, hooks, and settings. The convention hooks and `conventions-audit` are user-level (`~/Conventions`) and are not listed here.
 
 # Skills
 

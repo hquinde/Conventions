@@ -1,4 +1,4 @@
-# conventions
+# Conventions
 
 One canonical set of `CLAUDE.md`, hook, and skill conventions for [Claude Code](https://claude.com/claude-code) workspaces, installed once at user level so every workspace on a machine runs the same version.
 
@@ -18,11 +18,11 @@ Each workspace's `CLAUDE.md` tree is a schema for an agent: it names what's in e
 Requires `bash`, `jq`, `python3`, and `shasum` (macOS or Linux).
 
 ```sh
-git clone https://github.com/hquinde/conventions ~/conventions
-~/conventions/install.sh
+git clone https://github.com/hquinde/Conventions ~/Conventions
+~/Conventions/install.sh
 ```
 
-Then start a new Claude Code session; hook changes don't apply to sessions that are already open. `install.sh` is idempotent, so re-run it after pulling changes. `~/conventions/install.sh --uninstall` removes everything it added (hooks, skill link, pointer block) and leaves the repo alone. `--copy` copies the skill instead of symlinking it.
+Then start a new Claude Code session; hook changes don't apply to sessions that are already open. `install.sh` is idempotent, so re-run it after pulling changes. `~/Conventions/install.sh --uninstall` removes everything it added (hooks, skill link, pointer block) and leaves the repo alone. `--copy` copies the skill instead of symlinking it.
 
 It edits only the convention hook entries in `~/.claude/settings.json`, `~/.claude/skills/conventions-audit`, and a marked block in `~/.claude/CLAUDE.md`, and backs up `settings.json` first.
 
@@ -30,11 +30,11 @@ It edits only the convention hook entries in `~/.claude/settings.json`, `~/.clau
 
 A workspace opts in by having a root `CLAUDE.md` with a `# Project Map` or `# Last Updated` heading. The hooks are registered for every project but exit silently without one, so unrelated repos are untouched.
 
-Start the root file from [templates/CLAUDE.md.template](templates/CLAUDE.md.template). Its `# Conventions` section imports the guide (`@~/conventions/GUIDE.md`), so the guide is in context every session. Run `/conventions-audit` in a workspace to check it against the guide.
+Start the root file from [templates/CLAUDE.md.template](templates/CLAUDE.md.template). Its `# Conventions` section imports the guide (`@~/Conventions/GUIDE.md`), so the guide is in context every session. Run `/conventions-audit` in a workspace to check it against the guide.
 
 ## Changing the conventions
 
-Keep a single copy: edit `~/conventions`, from any workspace, and never copy it into one. Add a [CHANGELOG.md](CHANGELOG.md) entry, then commit and push from `~/conventions`. Hooks and the skill change everywhere at once; an existing `CLAUDE.md` changes only when the audit flags it and someone fixes it.
+Keep a single copy: edit `~/Conventions`, from any workspace, and never copy it into one. Add a [CHANGELOG.md](CHANGELOG.md) entry, then commit and push from `~/Conventions`. Hooks and the skill change everywhere at once; an existing `CLAUDE.md` changes only when the audit flags it and someone fixes it.
 
 ## License
 

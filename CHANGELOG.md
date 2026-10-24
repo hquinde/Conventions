@@ -9,6 +9,7 @@
 - `conventions-audit` skill: paths now point at `~/conventions`; check 6 reads the new log location; check 7 verifies the user-level wiring and flags leftover local copies or duplicate registrations.
 - Root `CLAUDE.md` template gets a `# Conventions` section that imports `~/conventions/GUIDE.md` (`@~/conventions/GUIDE.md`, so it loads every session) and says conventions are changed there, not in the workspace; added to the six opted-in workspaces' root files. `GUIDE.md` rule 16 and "Starting a new workspace", and audit check 7, mention it.
 - `templates/dot-claude-CLAUDE.md.template`: lists only a workspace's own skills/hooks/settings.
+- Added `README.md` and an MIT `LICENSE`. The master repo, https://github.com/hquinde/conventions, is now named in each workspace root's `# Conventions` section, the root template, `GUIDE.md` (rule 16, a new-machine step, and the edit-commit-push flow), this folder's `CLAUDE.md`, and the pointer block `install.sh` writes into `~/.claude/CLAUDE.md`.
 
 ## 2026-10-09
 

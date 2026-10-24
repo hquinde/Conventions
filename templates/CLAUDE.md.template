@@ -28,7 +28,7 @@ Each subdirectory with its own `CLAUDE.md` is listed here as `- [xxx/](xxx/) —
 
 # Conventions
 
-- This workspace follows `~/conventions/GUIDE.md`, imported below so it is in context every session (skeletons in `~/conventions/templates/`). When asked to add or change a convention, edit `~/conventions` and log it in its `CHANGELOG.md`, never this workspace. Run `/conventions-audit` to check this workspace against it.
+- This workspace follows `~/conventions/GUIDE.md` (canonical repo: [hquinde/conventions](https://github.com/hquinde/conventions), cloned to `~/conventions`), imported below so it is in context every session (skeletons in `~/conventions/templates/`). When asked to add or change a convention, edit `~/conventions` and log it in its `CHANGELOG.md`, never this workspace. Run `/conventions-audit` to check this workspace against it.
 
 @~/conventions/GUIDE.md
 

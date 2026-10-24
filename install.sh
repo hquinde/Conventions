@@ -107,7 +107,7 @@ $BEGIN
 
 - Workspaces whose root \`CLAUDE.md\` has a \`# Project Map\` follow \`~/conventions/GUIDE.md\`. Read it before creating or restructuring any \`CLAUDE.md\` or \`CONTEXT.md\`; skeletons are in \`~/conventions/templates/\`.
 - Run \`/conventions-audit\` to check a workspace against it. The new-file, move-tracking and \`# Last Updated\` hooks are already registered user-level — don't copy them into a project.
-- Edit conventions only in \`~/conventions\` (and log the change in its \`CHANGELOG.md\`); never keep a copy inside a workspace.
+- Edit conventions only in \`~/conventions\`, a clone of https://github.com/hquinde/conventions (log the change in its \`CHANGELOG.md\`, then commit and push); never keep a copy inside a workspace.
 $END
 EOF
   } > "$POINTER.new"

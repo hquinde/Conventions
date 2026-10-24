@@ -2,7 +2,12 @@
 
 # Purpose
 
-- The single canonical copy of the `CLAUDE.md`/hooks/skill conventions used by every workspace, installed user-level so all of them run the same version. Edit it here only; never copy it into a workspace.
+- The single canonical copy of the `CLAUDE.md`/hooks/skill conventions used by every workspace, installed user-level so all of them run the same version. Edit it here only; never copy it into a workspace. Master copy: https://github.com/hquinde/conventions (this folder is its clone).
+
+# Repository
+
+- [README.md](README.md) — what the repo is, quick start (clone and `install.sh`), how a workspace opts in, and how to change the conventions.
+- [LICENSE](LICENSE) — MIT license.
 
 # Guide
 

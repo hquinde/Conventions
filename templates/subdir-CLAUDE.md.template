@@ -1,0 +1,17 @@
+# <subdir>/
+
+# Purpose
+
+- <one-sentence statement of what this directory holds and why>
+
+# Context
+
+- [CONTEXT.md](CONTEXT.md) — <the standing rules for working in this directory>. Omit this section if the directory has no process rules (see `CONTEXT.md.template`).
+
+# <Typed Section, e.g. "Scripts" / "State" / "Source Files">
+
+- [<file>](<file>) — <what it is, in one line: no due dates, counts, status, or build history>.
+
+# Last Updated
+
+- <YYYY-MM-DD> — update this date whenever this file is edited.

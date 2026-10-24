@@ -1,0 +1,31 @@
+# <project-name>
+
+# Purpose
+
+- <one-sentence statement of what this project/workspace does>
+
+# Folder Map
+
+```
+<project-name>/                  (you are here)
+├── <subdir>/
+└── .claude/
+```
+
+Top-level folders only, one level deep, no filenames or comments. Adding a folder means updating this tree and the Project Map below.
+
+# Project Map
+
+Each subdirectory with its own `CLAUDE.md` is listed here as `- [xxx/](xxx/) — <one-line description>`, with no "see" before the link. Add new subdirectories in this exact format.
+
+- [<subdir>/](<subdir>/) — <one-line description>
+- [.claude/](.claude/) — Claude Code configuration: skills, hooks, and settings.
+
+# Rules
+
+- Ask if unsure.
+- Don't write into memory.
+
+# Last Updated
+
+- <YYYY-MM-DD> — update this date whenever this file is edited.

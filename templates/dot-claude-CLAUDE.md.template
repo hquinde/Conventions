@@ -1,0 +1,22 @@
+# .claude/
+
+# Purpose
+
+- Claude Code configuration for this workspace: its own skills, hooks, and settings. The convention hooks and `conventions-audit` are user-level (`~/conventions`) and are not listed here.
+
+# Skills
+
+- [<skill-name>](skills/<skill-name>/SKILL.md) — <when this skill is invoked>.
+
+# Hooks
+
+- [hooks/<script>](hooks/<script>) — `<Event>`/`<matcher>` hook that <what it does>. Omit this section if the workspace has no hooks of its own.
+
+# Settings
+
+- [settings.json](settings.json) — checked-in configuration for this workspace's own hooks. Omit if there are none.
+- [settings.local.json](settings.local.json) — local, per-user permission allowlist.
+
+# Last Updated
+
+- <YYYY-MM-DD> — update this date whenever this file is edited.

@@ -1,0 +1,36 @@
+# <Directory>: <what gets made or updated here>
+
+<One sentence: the task this file governs. The template, method, or formatting rules live in the skill or doc named under Inputs — this file holds only the folder-specific rules.>
+
+## Inputs
+
+| Source | File/Location | Section/Scope | Why |
+|--------|--------------|---------------|-----|
+| User | <uploaded files or pasted text> | Full content | <raw material to work from> |
+| Skill | [<path/to/SKILL.md>](<path/to/SKILL.md>) | Full file | <the method this folder follows> |
+| Reference | <a prior file in this folder> | <preamble, macros, structure> | <what to reuse so files stay consistent> |
+
+## Process
+
+1. <Follow the skill or doc named above for the general method.>
+2. <Folder-specific rule.>
+3. **[Checkpoint]** <Present the result to the user for review.>
+4. Run the audit below, and revise before saving.
+
+## Checkpoints
+
+| After Step | Agent Presents | Human Decides |
+|------------|---------------|---------------|
+| <step number of the [Checkpoint] above> | <what the agent shows> | <what the user approves or changes> |
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| <check> | <how to tell it passed> |
+
+## Outputs
+
+| Artifact | Location | Format |
+|----------|----------|--------|
+| <artifact> | `<path>` | <format and any "not kept / regenerate" caveat> |

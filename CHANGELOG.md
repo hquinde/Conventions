@@ -7,7 +7,7 @@
 - Hooks: all four now exit silently unless the root `CLAUDE.md` has `# Project Map` or `# Last Updated` (they run user-level, so they must ignore unrelated projects). The move log moved from `<project>/.claude/hooks/.pending-moves.jsonl` to `~/.claude/state/conventions/<sha1 of root, 12 chars>.jsonl`. `check-pending-moves.py` picked up two fixes that existed only in Fragrance-Media's copy: the `mv` regex stops at a newline, and a same-basename move (pure directory move or case-only rename) is not treated as a rename.
 - `claude-md-reminder.sh` now ignores files outside the project root (scratchpad, plan, and temp files); at user level they would otherwise trigger the reminder.
 - `conventions-audit` skill: paths now point at `~/conventions`; check 6 reads the new log location; check 7 verifies the user-level wiring and flags leftover local copies or duplicate registrations.
-- Root `CLAUDE.md` template gets a one-bullet `# Conventions` section pointing at `~/conventions/GUIDE.md` and saying conventions are changed there, not in the workspace; added to the six opted-in workspaces' root files. `GUIDE.md` rule 16 and "Starting a new workspace", and audit check 7, mention it.
+- Root `CLAUDE.md` template gets a `# Conventions` section that imports `~/conventions/GUIDE.md` (`@~/conventions/GUIDE.md`, so it loads every session) and says conventions are changed there, not in the workspace; added to the six opted-in workspaces' root files. `GUIDE.md` rule 16 and "Starting a new workspace", and audit check 7, mention it.
 - `templates/dot-claude-CLAUDE.md.template`: lists only a workspace's own skills/hooks/settings.
 
 ## 2026-10-09

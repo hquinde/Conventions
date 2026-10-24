@@ -13,6 +13,9 @@ FILE_PATH="$(printf '%s' "$INPUT" | jq -r '.tool_input.file_path // empty')"
 
 [ -z "$FILE_PATH" ] && exit 0
 
+# Only files inside this project need documenting (not scratchpad/plan/temp files).
+[[ "$FILE_PATH" == "$ROOT"/* ]] || exit 0
+
 BASENAME="$(basename "$FILE_PATH")"
 [ "$BASENAME" = "CLAUDE.md" ] && exit 0
 

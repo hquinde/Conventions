@@ -26,6 +26,10 @@ Each subdirectory with its own `CLAUDE.md` is listed here as `- [xxx/](xxx/) —
 - Ask if unsure.
 - Don't write into memory.
 
+# Conventions
+
+- This workspace follows `~/conventions/GUIDE.md` (skeletons in `~/conventions/templates/`). Read it before creating, moving, or restructuring any `CLAUDE.md`/`CONTEXT.md`, and when asked to add or change a convention: make that change in `~/conventions` and log it in its `CHANGELOG.md`, never in this workspace. Run `/conventions-audit` to check this workspace against it.
+
 # Last Updated
 
 - <YYYY-MM-DD> — update this date whenever this file is edited.

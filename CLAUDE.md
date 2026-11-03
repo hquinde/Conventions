@@ -19,7 +19,7 @@
 
 # Templates
 
-- [templates/CLAUDE.md.template](templates/CLAUDE.md.template) — root `CLAUDE.md` skeleton (Purpose + Project Map).
+- [templates/CLAUDE.md.template](templates/CLAUDE.md.template) — root `CLAUDE.md` skeleton (Purpose, Folder Map, Project Map, Rules, Conventions).
 - [templates/dot-claude-CLAUDE.md.template](templates/dot-claude-CLAUDE.md.template) — `.claude/CLAUDE.md` skeleton for a workspace's own skills, hooks, and settings.
 - [templates/subdir-CLAUDE.md.template](templates/subdir-CLAUDE.md.template) — generic per-directory `CLAUDE.md` skeleton (typed sections + linked bullets).
 - [templates/CONTEXT.md.template](templates/CONTEXT.md.template) — per-directory `CONTEXT.md` skeleton for standing process rules (Inputs, Process, Checkpoints, Audit, Outputs).

@@ -9,7 +9,7 @@ Checks a workspace's `CLAUDE.md` tree against the conventions documented in `~/W
 
 ## 1. Discover the tree
 
-Find every `CLAUDE.md` in the project (excluding `.git`, `node_modules`). Read the root one first. When the project is the Conventions bundle itself, skip the root-structure checks (no `# Project Map`, `# Folder Map`, or `# Conventions` import is expected; see GUIDE rule 16) and audit it as a repo index.
+Find every `CLAUDE.md` in the project (excluding `.git`, `node_modules`). Read the root one first. When the project is the Conventions bundle itself, skip the root-structure checks (the `# Project Map` in step 2, the `# Conventions` import in step 7, and the `# Folder Map` in step 10; see GUIDE rule 16) and audit it as a repo index.
 
 ## 2. Project Map completeness
 
@@ -35,7 +35,7 @@ Grep the whole tree for filenames that no longer exist at the path implied by th
 
 ## 7. Hooks and skill wired once, user-level
 
-Confirm `~/.claude/settings.json` registers the four scripts from `~/Workspaces/Conventions/hooks/` — `claude-md-reminder.sh` on `PostToolUse`/`Write`, `mv-reminder.sh` on `PostToolUse`/`Bash`, `stamp-claude-md-date.sh` on `PostToolUse`/`Edit|Write`, `check-pending-moves.py` on `Stop` — and that `~/.claude/skills/conventions-audit` resolves. In the workspace being audited, flag (rule 16): a `conventions/` folder, copies of those four scripts under `.claude/hooks/`, a `.claude/skills/conventions-audit/` copy, or project `settings.json` entries that register them (they would fire twice). Also flag any of those copies that are deleted on disk but still tracked, or whose deletion is uncommitted (`git status`): a checkout or `git checkout .` restores them and the hooks fire twice. Flag entries in the project's `.claude/settings.local.json` that point at hook or script paths that no longer exist. A project's own hooks are fine, but each must be documented with a working link in `.claude/CLAUDE.md`. Flag a root `CLAUDE.md` with no `# Conventions` section, or one that lacks the `@~/Workspaces/Conventions/GUIDE.md` import line. If the root `CLAUDE.md` has neither `# Project Map` nor `# Last Updated`, note that the hooks skip this workspace.
+Confirm `~/.claude/settings.json` registers the scripts from `~/Workspaces/Conventions/hooks/` — `claude-md-reminder.sh` on `PostToolUse`/`Write`, `mv-reminder.sh` on `PostToolUse`/`Bash`, `stamp-claude-md-date.sh` on `PostToolUse`/`Edit|Write`, `check-pending-moves.py` on `Stop` — and that `~/.claude/skills/conventions-audit` resolves. In the workspace being audited, flag (rule 16): a `conventions/` folder, copies of those four scripts under `.claude/hooks/`, a `.claude/skills/conventions-audit/` copy, or project `settings.json` entries that register them (they would fire twice). Also flag any of those copies that are deleted on disk but still tracked, or whose deletion is uncommitted (`git status`): a checkout or `git checkout .` restores them and the hooks fire twice. Flag entries in the project's `.claude/settings.local.json` that point at hook or script paths that no longer exist. A project's own hooks are fine, but each must be documented with a working link in `.claude/CLAUDE.md`. Flag a root `CLAUDE.md` with no `# Conventions` section, or one that lacks the `@~/Workspaces/Conventions/GUIDE.md` import line. If the root `CLAUDE.md` has neither `# Project Map` nor `# Last Updated`, note that the hooks skip this workspace.
 
 ## 8. Descriptions are snapshot-free and accurate
 

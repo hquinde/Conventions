@@ -8,6 +8,8 @@ Found by running `conventions-audit` on the new `~/Workspaces` root and its seve
 - `GUIDE.md` rule 16 and audit step 1: this bundle's own `CLAUDE.md` is exempt from the root-structure checks (Project Map, Folder Map, `# Conventions` import); the import would be circular and there are no subdirectories to map.
 - Audit check 3: `.gitignore` joins the files skipped by the undocumented-file check.
 - This folder's `CLAUDE.md`: dropped the "four hooks" counts (rules 10 and 12).
+- `GUIDE.md` rule 2 now lists the root sections the template actually carries (Folder Map, Context, Rules, Conventions, Last Updated), matching rules 15 and 16. The rule 16 exemption notes a Project Map becomes required if the bundle gains a subdirectory `CLAUDE.md`; audit step 1 names the three skipped checks by step.
+- Dropped the remaining "four hooks"/"four scripts" counts from `README.md`, `GUIDE.md` and the audit skill, and corrected the `CLAUDE.md` description of the root template.
 - Left as is: rule 11 already allows extra standing-fact sections beside the five `CONTEXT.md` stages, so `CONTEXT.md` files shaped as design notes or status trackers are restructured in the workspace, not exempted.
 
 ## 2026-11-02

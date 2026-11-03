@@ -8,7 +8,7 @@ Each workspace's `CLAUDE.md` tree is a schema for an agent: it names what's in e
 
 - [GUIDE.md](GUIDE.md) — the conventions and the reasoning behind them, plus how a new workspace starts and how this is installed. Start here.
 - [templates/](templates/) — skeletons for a root `CLAUDE.md`, a `.claude/CLAUDE.md`, a per-directory `CLAUDE.md`, and a `CONTEXT.md`.
-- [hooks/](hooks/) — four hooks: a new-file documentation reminder, move tracking, a stale-reference check at the end of a turn, and `# Last Updated` date stamping.
+- [hooks/](hooks/) — the hooks: a new-file documentation reminder, move tracking, a stale-reference check at the end of a turn, and `# Last Updated` date stamping.
 - [skills/conventions-audit/](skills/conventions-audit/SKILL.md) — a skill that audits a workspace's `CLAUDE.md` tree against the guide.
 - [install.sh](install.sh) — registers the hooks, links the skill, and adds a pointer to `~/.claude/CLAUDE.md`.
 - [CHANGELOG.md](CHANGELOG.md) — what changed and when.

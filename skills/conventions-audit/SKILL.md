@@ -9,17 +9,17 @@ Checks a workspace's `CLAUDE.md` tree against the conventions documented in `~/W
 
 ## 1. Discover the tree
 
-Find every `CLAUDE.md` in the project (excluding `.git`, `node_modules`). Read the root one first.
+Find every `CLAUDE.md` in the project (excluding `.git`, `node_modules`). Read the root one first. When the project is the Conventions bundle itself, skip the root-structure checks (no `# Project Map`, `# Folder Map`, or `# Conventions` import is expected; see GUIDE rule 16) and audit it as a repo index.
 
 ## 2. Project Map completeness
 
-For every directory that has its own `CLAUDE.md`, confirm its parent's `CLAUDE.md` lists it — in the exact format `- [xxx/](xxx/) — <one-line description>` (no bold, link to the folder itself not its `CLAUDE.md` file, no "see" before the link, and a trailing one-line, high-level description). The prose format line above the root's list must state that same format; flag one that contradicts the entries below it (for example, showing the entry in bold). Flag: missing entries, wrong relative path, format drift, a missing/empty description, or a description that names specific files inside the subdirectory (that belongs in the subdirectory's own `CLAUDE.md`, not the parent's).
+For every directory that has its own `CLAUDE.md`, confirm its parent's `CLAUDE.md` lists it — in the exact format `- [xxx/](xxx/) — <one-line description>` (no bold, link to the folder itself not its `CLAUDE.md` file, no "see" before the link, and a trailing one-line, high-level description). The prose format line above the root's list must state that same format; flag one that contradicts the entries below it (for example, showing the entry in bold). A folder name with a space or URL-unsafe character is written with its real name as the link text and a percent-encoded path (`[Fall 2026/](Fall%202026/)`); that is not format drift, but link text that differs from the real folder name is. Flag: missing entries, wrong relative path, format drift, a missing/empty description, or a description that names specific files inside the subdirectory (that belongs in the subdirectory's own `CLAUDE.md`, not the parent's).
 
 ## 3. Every bullet links to a real file
 
 For each bullet across every `CLAUDE.md`, if it names a file or directory in this project, it should be a markdown link (`[name](path)`), and the path must resolve to a file that actually exists. Flag: bare `**bold**` filenames with no link, and links that 404.
 
-Check the other direction too: list the files and folders actually in each directory and flag any that no `CLAUDE.md` for that directory mentions. Skip `.DS_Store`, build caches (`__pycache__`, `*.pyc`) and `.git`. A gitignored file is still flagged unless it is documented as machine state or run state (for example a lock file, a log, or a browser-profile folder); undocumented files are how stray artifacts end up committed.
+Check the other direction too: list the files and folders actually in each directory and flag any that no `CLAUDE.md` for that directory mentions. Skip `.DS_Store`, `.gitignore`, build caches (`__pycache__`, `*.pyc`) and `.git`. A gitignored file is still flagged unless it is documented as machine state or run state (for example a lock file, a log, or a browser-profile folder); undocumented files are how stray artifacts end up committed.
 
 ## 4. Sections are typed, not flat
 

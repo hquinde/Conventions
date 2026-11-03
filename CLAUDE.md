@@ -15,7 +15,7 @@
 
 # Install
 
-- [install.sh](install.sh) — idempotent user-level installer: registers the four hooks in `~/.claude/settings.json`, symlinks the audit skill into `~/.claude/skills/`, and writes the pointer block in `~/.claude/CLAUDE.md`. `--copy` copies the skill instead of linking; `--uninstall` reverses everything.
+- [install.sh](install.sh) — idempotent user-level installer: registers the hooks in `~/.claude/settings.json`, symlinks the audit skill into `~/.claude/skills/`, and writes the pointer block in `~/.claude/CLAUDE.md`. `--copy` copies the skill instead of linking; `--uninstall` reverses everything.
 
 # Templates
 
@@ -26,7 +26,7 @@
 
 # Hooks
 
-All four exit silently unless the project's root `CLAUDE.md` has `# Project Map` or `# Last Updated`.
+Each exits silently unless the project's root `CLAUDE.md` has `# Project Map` or `# Last Updated`.
 
 - [hooks/claude-md-reminder.sh](hooks/claude-md-reminder.sh) — `PostToolUse`/`Write` hook that reminds the agent to document a newly created file in the nearest `CLAUDE.md`.
 - [hooks/mv-reminder.sh](hooks/mv-reminder.sh) — `PostToolUse`/`Bash` hook that reminds the agent to update `CLAUDE.md` entries after a `mv`/`git mv` and logs the move.

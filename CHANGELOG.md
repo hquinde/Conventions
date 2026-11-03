@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-02 (workspace-wide audit)
+
+Found by running `conventions-audit` on the new `~/Workspaces` root and its seven workspaces. Resolutions to gaps the audit exposed:
+
+- `GUIDE.md` rule 3 and audit check 2: a folder name with a space or URL-unsafe character keeps its real name as link text and percent-encodes the path (`[Fall 2026/](Fall%202026/)`); link text that differs from the real folder name is drift.
+- `GUIDE.md` rule 16 and audit step 1: this bundle's own `CLAUDE.md` is exempt from the root-structure checks (Project Map, Folder Map, `# Conventions` import); the import would be circular and there are no subdirectories to map.
+- Audit check 3: `.gitignore` joins the files skipped by the undocumented-file check.
+- This folder's `CLAUDE.md`: dropped the "four hooks" counts (rules 10 and 12).
+- Left as is: rule 11 already allows extra standing-fact sections beside the five `CONTEXT.md` stages, so `CONTEXT.md` files shaped as design notes or status trackers are restructured in the workspace, not exempted.
+
 ## 2026-11-02
 
 - `GUIDE.md` rule 15: a root `# Folder Map` is now expected, not optional ("Root carries a `# Folder Map`"). The `conventions-audit` skill flags a root that has a `# Project Map` but no `# Folder Map`; check 10 used to skip silently.

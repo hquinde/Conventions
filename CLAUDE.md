@@ -35,7 +35,7 @@ All four exit silently unless the project's root `CLAUDE.md` has `# Project Map`
 
 # Skills
 
-- [skills/conventions-audit/SKILL.md](skills/conventions-audit/SKILL.md) — audits a workspace's `CLAUDE.md` tree against these conventions (Project Map completeness, linked bullets, typed sections, `# Last Updated`, stale references, user-level hook wiring and leftover copies, snapshot-free descriptions, `CLAUDE.md`/`CONTEXT.md` split, Folder Map).
+- [skills/conventions-audit/SKILL.md](skills/conventions-audit/SKILL.md) — audits a workspace's `CLAUDE.md` tree against these conventions (Project Map completeness and format line, linked bullets in both directions, typed sections, `# Last Updated` against file modification time, stale references, user-level hook wiring and leftover copies, snapshot-free descriptions and self-contained Purposes, `CLAUDE.md`/`CONTEXT.md` split, required Folder Map).
 
 # Changelog
 
@@ -43,4 +43,4 @@ All four exit silently unless the project's root `CLAUDE.md` has `# Project Map`
 
 # Last Updated
 
-- 2026-10-24 — update this date whenever this file is edited.
+- 2026-11-02 — update this date whenever this file is edited.

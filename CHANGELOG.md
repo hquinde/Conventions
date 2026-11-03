@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-02
+
+- `GUIDE.md` rule 15: a root `# Folder Map` is now expected, not optional ("Root carries a `# Folder Map`"). The `conventions-audit` skill flags a root that has a `# Project Map` but no `# Folder Map`; check 10 used to skip silently.
+- `conventions-audit` skill, new checks found while auditing agentic-applier (all inside existing checks, so check numbers are unchanged):
+  - Check 2: the root's prose format line must match the required entry format (it had said bold).
+  - Check 3: also lists files on disk that no `CLAUDE.md` for that directory mentions, not only links that 404.
+  - Check 4: flags a catch-all `# Files` section mixing unlike kinds of entries.
+  - Check 5: compares `# Last Updated` against file modification time as well as `git log`.
+  - Check 7: flags old convention copies deleted on disk but still tracked or uncommitted, and stale hook paths in `.claude/settings.local.json`.
+  - Check 8: flags a `# Purpose` justified against another directory or step number (rule 9 had no check).
+  - Check 9: flags a `CONTEXT.md` linked outside a `# Context` section, and stages that are not named `## Inputs`/`## Process`/`## Checkpoints`/`## Audit`/`## Outputs`.
+  - Check 11: the report leads with the highest-impact findings.
+- Other opted-in workspaces without a Folder Map will now be flagged by the audit until they add one.
+
 ## 2026-10-24
 
 - Centralized. This bundle is now the single canonical copy at `~/Conventions` (own git repo), installed user-level; the per-workspace `conventions/` copies, copied hooks, copied audit skills, and per-project hook wiring were removed from the seven workspaces that had them. New `GUIDE.md` rule 16; "Applying this to another project" became "Starting a new workspace", and "Keeping several projects in sync" became "How this is installed".

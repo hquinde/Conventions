@@ -13,6 +13,7 @@
   - Check 9: flags a `CONTEXT.md` linked outside a `# Context` section, and stages that are not named `## Inputs`/`## Process`/`## Checkpoints`/`## Audit`/`## Outputs`.
   - Check 11: the report leads with the highest-impact findings.
 - Other opted-in workspaces without a Folder Map will now be flagged by the audit until they add one.
+- Canonical location moved from `~/Conventions` to `~/Workspaces/Conventions` (all workspaces now live under `~/Workspaces`). `install.sh` derives the path it shows in the `~/.claude/CLAUDE.md` pointer block from where it runs (`REPO_DISPLAY`) instead of hardcoding it; `GUIDE.md`, `README.md`, the audit skill and both root/`.claude` templates name the new path. Workspaces' `@…/GUIDE.md` imports were repointed by hand. Older entries below keep the old path as written. Re-run `install.sh` after any move to repoint the hooks and the skill link.
 
 ## 2026-10-24
 

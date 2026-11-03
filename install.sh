@@ -10,11 +10,16 @@
 set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Repo path as shown in text: a leading ~ when under $HOME (the guide and the workspace imports use that form).
+case "$REPO" in
+  "$HOME"/*) REPO_DISPLAY="~/${REPO#"$HOME"/}" ;;
+  *) REPO_DISPLAY="$REPO" ;;
+esac
 CLAUDE_DIR="$HOME/.claude"
 SETTINGS="$CLAUDE_DIR/settings.json"
 SKILL_LINK="$CLAUDE_DIR/skills/conventions-audit"
 POINTER="$CLAUDE_DIR/CLAUDE.md"
-BEGIN='<!-- conventions:begin (managed by ~/Conventions/install.sh) -->'
+BEGIN="<!-- conventions:begin (managed by $REPO_DISPLAY/install.sh) -->"
 END='<!-- conventions:end -->'
 
 MODE=install; COPY=0
@@ -105,9 +110,9 @@ write_pointer() {
 $BEGIN
 # Workspace conventions
 
-- Workspaces whose root \`CLAUDE.md\` has a \`# Project Map\` follow \`~/Conventions/GUIDE.md\`. Read it before creating or restructuring any \`CLAUDE.md\` or \`CONTEXT.md\`; skeletons are in \`~/Conventions/templates/\`.
+- Workspaces whose root \`CLAUDE.md\` has a \`# Project Map\` follow \`$REPO_DISPLAY/GUIDE.md\`. Read it before creating or restructuring any \`CLAUDE.md\` or \`CONTEXT.md\`; skeletons are in \`$REPO_DISPLAY/templates/\`.
 - Run \`/conventions-audit\` to check a workspace against it. The new-file, move-tracking and \`# Last Updated\` hooks are already registered user-level — don't copy them into a project.
-- Edit conventions only in \`~/Conventions\`, a clone of https://github.com/hquinde/Conventions (log the change in its \`CHANGELOG.md\`, then commit and push); never keep a copy inside a workspace.
+- Edit conventions only in \`$REPO_DISPLAY\`, a clone of https://github.com/hquinde/Conventions (log the change in its \`CHANGELOG.md\`, then commit and push); never keep a copy inside a workspace.
 $END
 EOF
   } > "$POINTER.new"

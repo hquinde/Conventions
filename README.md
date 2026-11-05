@@ -13,6 +13,13 @@ Each workspace's `CLAUDE.md` tree is a schema for an agent: it names what's in e
 - [install.sh](install.sh) — registers the hooks, links the skill, and adds a pointer to `~/.claude/CLAUDE.md`.
 - [CHANGELOG.md](CHANGELOG.md) — what changed and when.
 
+## Background reading
+
+The design borrows from two sources:
+
+- [How the Open Knowledge Format can improve data sharing](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) (Google Cloud blog) — Open Knowledge Format (OKF): mapping structure and terminology into an explicit schema so an agent acts on it accurately. Here, each `CLAUDE.md` is the schema for its directory.
+- [Interpretable Context Methodology: Folder Structure as Agentic Architecture](https://arxiv.org/abs/2603.16021) (Van Clief & McDermott, arXiv:2603.16021) — Interpretable Context Methodology (ICM): a filesystem-based way to give an agent context that a human can open and check.
+
 ## Quick start
 
 Requires `bash`, `jq`, `python3`, and `shasum` (macOS or Linux).

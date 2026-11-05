@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-05
+
+- `README.md`: new "Background reading" section linking the Open Knowledge Format blog post (Google Cloud) and the Interpretable Context Methodology paper (arXiv:2603.16021), the two sources `GUIDE.md` says the conventions borrow from.
+- This folder's `CLAUDE.md`: the `README.md` bullet now mentions the background reading.
+
 ## 2026-11-02 (workspace-wide audit)
 
 Found by running `conventions-audit` on the new `~/Workspaces` root and its seven workspaces. Resolutions to gaps the audit exposed:

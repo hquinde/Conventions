@@ -6,7 +6,7 @@
 
 # Repository
 
-- [README.md](README.md) — what the repo is, quick start (clone and `install.sh`), how a workspace opts in, and how to change the conventions.
+- [README.md](README.md) — what the repo is, the background reading it draws on (OKF blog, ICM paper), quick start (clone and `install.sh`), how a workspace opts in, and how to change the conventions.
 - [LICENSE](LICENSE) — MIT license.
 
 # Guide
@@ -43,4 +43,4 @@ Each exits silently unless the project's root `CLAUDE.md` has `# Project Map` or
 
 # Last Updated
 
-- 2026-11-02 — update this date whenever this file is edited.
+- 2026-11-05 — update this date whenever this file is edited.
